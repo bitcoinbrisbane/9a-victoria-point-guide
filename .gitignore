@@ -1,0 +1,10 @@
+# macOS
+.DS_Store
+
+# Editor
+.vscode/
+.idea/
+
+# Local notes / secrets (never commit real codes or passwords)
+secrets.txt
+*.local

@@ -1,0 +1,338 @@
+/* =========================================================
+   9A Edinburgh St — Guest Guide
+   Pure CSS, no dependencies (except Fraunces web font).
+   Boutique waterfront palette.
+   ========================================================= */
+
+:root {
+  --ink: #1c2b30;
+  --ink-soft: #5a6b70;
+  --sea: #1f6b76;
+  --sea-deep: #0d4650;
+  --mist: #7fa9ac;
+  --sand: #f4efe6;
+  --paper: #ffffff;
+  --line: #e6ddcd;
+  --brass: #b08b4f;
+  --brass-soft: #cbb488;
+  --warn-bg: #faf3e6;
+  --tip-bg: #eef4f3;
+  --highlight-bg: #ecf3f2;
+  --radius: 6px;
+  --shadow: 0 10px 30px rgba(13, 70, 80, 0.07);
+  --serif: "Fraunces", "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; scroll-padding-top: 84px; }
+
+body {
+  margin: 0;
+  font-family: var(--sans);
+  color: var(--ink);
+  background: var(--sand);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  position: relative;
+  color: #fff;
+  padding: 96px 20px 104px;
+  text-align: center;
+  overflow: hidden;
+  background:
+    linear-gradient(165deg, rgba(9,55,63,0.94) 0%, rgba(31,107,118,0.90) 55%, rgba(127,169,172,0.86) 100%),
+    /* drop a hero photo in later by adding a url() here */
+    radial-gradient(circle at 70% 20%, rgba(255,255,255,0.10), transparent 60%);
+  background-size: cover;
+  background-position: center;
+}
+.hero-inner { max-width: 780px; margin: 0 auto; position: relative; z-index: 1; }
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.42em;
+  font-size: 0.7rem;
+  font-weight: 600;
+  margin: 0 0 22px;
+  color: var(--brass-soft);
+  padding-left: 0.42em;
+}
+.hero h1 {
+  font-family: var(--serif);
+  margin: 0;
+  font-size: clamp(2.4rem, 6vw, 3.6rem);
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  line-height: 1.1;
+}
+.tagline {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(1.1rem, 2.4vw, 1.4rem);
+  margin: 20px 0 30px;
+  color: rgba(255,255,255,0.9);
+}
+.addr {
+  display: inline-block;
+  border-top: 1px solid rgba(203,180,136,0.5);
+  border-bottom: 1px solid rgba(203,180,136,0.5);
+  padding: 10px 22px;
+  font-size: 0.8rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin: 0;
+  color: rgba(255,255,255,0.92);
+}
+
+/* ---------- Quick nav ---------- */
+.quicknav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(255,255,255,0.96);
+  backdrop-filter: saturate(180%) blur(8px);
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 2px;
+  padding: 6px 12px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.quicknav a {
+  flex: 0 0 auto;
+  text-decoration: none;
+  color: var(--sea-deep);
+  font-weight: 500;
+  font-size: 0.82rem;
+  letter-spacing: 0.02em;
+  padding: 9px 14px;
+  border-radius: 4px;
+  white-space: nowrap;
+  transition: color 0.18s, background 0.18s;
+  position: relative;
+}
+.quicknav a::after {
+  content: "";
+  position: absolute;
+  left: 14px; right: 14px; bottom: 4px;
+  height: 1px;
+  background: var(--brass);
+  transform: scaleX(0);
+  transition: transform 0.18s;
+}
+.quicknav a:hover { color: var(--brass); }
+.quicknav a:hover::after { transform: scaleX(1); }
+
+/* ---------- Layout ---------- */
+main {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 48px 22px 10px;
+}
+section { margin: 64px 0; scroll-margin-top: 84px; }
+section h2 {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: clamp(1.6rem, 3.5vw, 2.1rem);
+  color: var(--sea-deep);
+  margin: 0 0 6px;
+  letter-spacing: 0.3px;
+}
+section h2::after {
+  content: "";
+  display: block;
+  width: 56px;
+  height: 2px;
+  background: var(--brass);
+  margin: 16px 0 4px;
+}
+.section-intro {
+  color: var(--ink-soft);
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.08rem;
+  margin: 10px 0 22px;
+}
+
+/* ---------- Cards ---------- */
+.card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 28px 30px;
+  box-shadow: var(--shadow);
+  margin-bottom: 18px;
+}
+.card h3 {
+  font-family: var(--serif);
+  font-weight: 600;
+  margin: 0 0 12px;
+  font-size: 1.2rem;
+  color: var(--ink);
+  letter-spacing: 0.2px;
+}
+.card ul, .card ol { margin: 10px 0; padding-left: 22px; }
+.card li { margin: 8px 0; }
+.card.highlight { border-top: 3px solid var(--brass); background: var(--highlight-bg); }
+
+/* ---------- Code pills ---------- */
+.code-pill {
+  display: inline-block;
+  font-family: "SF Mono", ui-monospace, Menlo, Consolas, monospace;
+  background: var(--sea-deep);
+  color: #fff;
+  letter-spacing: 0.28em;
+  padding: 5px 16px;
+  border-radius: 4px;
+  font-size: 0.92rem;
+  font-weight: 500;
+  vertical-align: middle;
+  padding-right: calc(16px - 0.28em);
+}
+.note { color: var(--ink-soft); font-size: 0.8rem; font-style: italic; }
+
+/* ---------- Buttons / links ---------- */
+.btn {
+  display: inline-block;
+  margin: 8px 8px 4px 0;
+  padding: 11px 20px;
+  background: var(--sea-deep);
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.86rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  border-radius: 4px;
+  border: 1px solid var(--sea-deep);
+  transition: background 0.18s, color 0.18s, transform 0.18s;
+}
+.btn:hover { background: var(--sea); transform: translateY(-1px); }
+.btn.ghost { background: transparent; color: var(--sea-deep); }
+.btn.ghost:hover { background: var(--sea-deep); color: #fff; }
+.link-grid { display: flex; flex-direction: column; gap: 4px; align-items: flex-start; margin: 12px 0 4px; }
+
+/* ---------- Manual links ---------- */
+.manual {
+  display: inline-block;
+  margin-left: 8px;
+  font-size: 0.76rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--brass);
+  border-bottom: 1px solid var(--brass-soft);
+  white-space: nowrap;
+  transition: color 0.18s, border-color 0.18s;
+}
+.manual::before { content: "\2193\00a0"; /* down arrow = download */ }
+.manual:hover { color: var(--sea-deep); border-color: var(--sea-deep); }
+
+/* ---------- Callouts ---------- */
+.tip, .warn {
+  padding: 12px 16px;
+  border-radius: 4px;
+  margin: 16px 0 2px;
+  font-size: 0.92rem;
+}
+.tip { background: var(--tip-bg); border-left: 3px solid var(--sea); }
+.warn { background: var(--warn-bg); border-left: 3px solid var(--brass); }
+
+/* ---------- Key/value tables ---------- */
+table.kv { width: 100%; border-collapse: collapse; margin: 4px 0; }
+table.kv th, table.kv td {
+  text-align: left;
+  vertical-align: top;
+  padding: 11px 8px;
+  border-bottom: 1px solid var(--line);
+}
+table.kv th {
+  width: 34%;
+  color: var(--sea-deep);
+  font-weight: 600;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+table.kv tr:last-child th, table.kv tr:last-child td { border-bottom: none; }
+
+/* ---------- Image slots (drop photos in later) ---------- */
+.img-slot {
+  margin: 0 0 18px;
+  aspect-ratio: 16 / 7;
+  background:
+    repeating-linear-gradient(45deg, rgba(176,139,79,0.04) 0 12px, transparent 12px 24px),
+    var(--paper);
+  border: 1px dashed var(--brass-soft);
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.img-slot img { width: 100%; height: 100%; object-fit: cover; }
+.img-slot figcaption {
+  color: var(--brass);
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  font-style: italic;
+  text-align: center;
+  padding: 0 16px;
+}
+
+/* ---------- Checklist ---------- */
+.checklist { list-style: none; padding-left: 2px; }
+.checklist li { position: relative; padding-left: 30px; margin: 11px 0; }
+.checklist li::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 8px;
+  width: 8px; height: 8px;
+  border: 1.5px solid var(--brass);
+  transform: rotate(45deg);
+}
+.thanks {
+  margin-top: 18px;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.15rem;
+  color: var(--sea-deep);
+}
+
+/* ---------- Footer ---------- */
+footer {
+  text-align: center;
+  padding: 56px 20px 64px;
+  margin-top: 40px;
+  color: var(--ink-soft);
+  font-size: 0.88rem;
+  border-top: 1px solid var(--line);
+}
+footer p { margin: 5px 0; }
+footer p:first-child { font-family: var(--serif); font-size: 1rem; color: var(--sea-deep); letter-spacing: 0.16em; text-transform: uppercase; }
+.fineprint { font-size: 0.76rem; opacity: 0.8; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 560px) {
+  .hero { padding: 68px 18px 76px; }
+  main { padding: 32px 18px 10px; }
+  section { margin: 48px 0; }
+  table.kv th { width: 44%; }
+  .card { padding: 22px 20px; }
+}
+
+/* ---------- Print ---------- */
+@media print {
+  .quicknav { display: none; }
+  .hero { background: none; color: #000; padding: 10px 0; }
+  .img-slot { display: none; }
+  body { background: #fff; }
+  .card { box-shadow: none; break-inside: avoid; border-color: #ccc; }
+  .btn { background: none; color: #000; border: none; padding: 0; text-decoration: underline; }
+  a { color: #000; }
+}
