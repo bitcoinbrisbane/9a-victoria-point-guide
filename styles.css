@@ -51,6 +51,31 @@ body {
   background-position: center 42%;
 }
 .hero-inner { max-width: 780px; margin: 0 auto; position: relative; z-index: 1; }
+
+/* ---------- Conditions widget (top-left of hero) ---------- */
+.conditions {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  z-index: 2;
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  padding: 9px 15px;
+  background: rgba(9, 55, 63, 0.34);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 999px;
+  backdrop-filter: saturate(150%) blur(8px);
+  -webkit-backdrop-filter: saturate(150%) blur(8px);
+  color: #fff;
+  font-size: 0.82rem;
+  line-height: 1;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.18);
+}
+.cond-item { display: flex; align-items: center; gap: 6px; white-space: nowrap; }
+.cond-item + .cond-item { padding-left: 14px; border-left: 1px solid rgba(255,255,255,0.2); }
+.cond-icon { font-size: 1rem; line-height: 1; }
+.cond-val { font-weight: 500; letter-spacing: 0.01em; }
 .eyebrow {
   text-transform: uppercase;
   letter-spacing: 0.42em;
@@ -97,11 +122,19 @@ body {
   backdrop-filter: saturate(180%) blur(8px);
   border-bottom: 1px solid var(--line);
   display: flex;
-  flex-wrap: nowrap;
-  gap: 2px;
-  padding: 6px 12px;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2px 4px;
+  padding: 8px 12px;
+}
+/* On narrow screens, switch to a single scrolling row (no wrap) */
+@media (max-width: 700px) {
+  .quicknav {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
 }
 .quicknav a {
   flex: 0 0 auto;

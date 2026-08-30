@@ -15,6 +15,23 @@
 
 <!-- ============ HEADER ============ -->
 <header class="hero">
+
+ <!-- Live-style conditions widget (currently sample data; see js/conditions.js) -->
+ <aside class="conditions" id="conditions" aria-label="Current bay conditions">
+ <div class="cond-item">
+ <span class="cond-icon" id="cond-sky" aria-hidden="true">☀️</span>
+ <span class="cond-val" id="cond-temp">—</span>
+ </div>
+ <div class="cond-item">
+ <span class="cond-icon" aria-hidden="true">🌬️</span>
+ <span class="cond-val" id="cond-wind">—</span>
+ </div>
+ <div class="cond-item">
+ <span class="cond-icon" aria-hidden="true">🌊</span>
+ <span class="cond-val" id="cond-tide">—</span>
+ </div>
+ </aside>
+
  <div class="hero-inner">
  <p class="eyebrow">Waterfront · Victoria Point</p>
  <h1>Welcome to 9A Edinburgh&nbsp;St</h1>
@@ -351,8 +368,9 @@
 
 <footer>
  <p>9A Edinburgh Street, Victoria Point QLD 4165</p>
- <p class="fineprint">Digital guest companion · Codes &amp; passwords shown as placeholders and provided securely before arrival.</p>
+ <p class="fineprint">Digital guest companion · Enjoy your stay on the bay.</p>
 </footer>
 
+<script src="js/conditions.js"></script>
 </body>
 </html>
