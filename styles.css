@@ -45,11 +45,10 @@ body {
   text-align: center;
   overflow: hidden;
   background:
-    linear-gradient(165deg, rgba(9,55,63,0.94) 0%, rgba(31,107,118,0.90) 55%, rgba(127,169,172,0.86) 100%),
-    /* drop a hero photo in later by adding a url() here */
-    radial-gradient(circle at 70% 20%, rgba(255,255,255,0.10), transparent 60%);
+    linear-gradient(165deg, rgba(9,55,63,0.82) 0%, rgba(13,70,80,0.68) 45%, rgba(9,55,63,0.80) 100%),
+    url('images/hero.jpg');
   background-size: cover;
-  background-position: center;
+  background-position: center 42%;
 }
 .hero-inner { max-width: 780px; margin: 0 auto; position: relative; z-index: 1; }
 .eyebrow {

@@ -8,3 +8,6 @@
 # Local notes / secrets (never commit real codes or passwords)
 secrets.txt
 *.local
+
+# Full-res source images (kept locally; web-optimized versions are committed)
+images/hero-original.jpg
