@@ -216,6 +216,36 @@ section h2::after {
 .btn.ghost:hover { background: var(--sea-deep); color: #fff; }
 .link-grid { display: flex; flex-direction: column; gap: 4px; align-items: flex-start; margin: 12px 0 4px; }
 
+/* ---------- Wi-Fi row (details + connect QR) ---------- */
+.wifi-row {
+  display: flex;
+  gap: 28px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.wifi-details { flex: 1 1 240px; min-width: 240px; }
+.wifi-qr {
+  flex: 0 0 auto;
+  margin: 0;
+  text-align: center;
+}
+.wifi-qr img {
+  width: 150px;
+  height: 150px;
+  display: block;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 8px;
+  background: #fff;
+}
+.wifi-qr figcaption {
+  margin-top: 8px;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--brass);
+}
+
 /* ---------- Manual links ---------- */
 .manual {
   display: inline-block;
