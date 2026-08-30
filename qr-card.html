@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>9A Edinburgh St · Guest Guide QR Card</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --ink:#1c2b30; --sea-deep:#0d4650; --sea:#1f6b76;
+    --sand:#f4efe6; --brass:#b08b4f; --line:#e6ddcd;
+    --serif:"Fraunces",Georgia,serif;
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:#d9d2c4;font-family:var(--sans);color:var(--ink);
+    min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;}
+
+  /* The printable card — A5-ish proportions */
+  .card{
+    width:148mm;max-width:100%;background:#fff;text-align:center;
+    padding:22mm 16mm;border:1px solid var(--line);
+    box-shadow:0 18px 50px rgba(13,70,80,0.18);position:relative;
+  }
+  .card::before{content:"";position:absolute;inset:6mm;border:1px solid var(--brass);
+    pointer-events:none;}
+  .eyebrow{text-transform:uppercase;letter-spacing:.4em;font-size:.62rem;font-weight:600;
+    color:var(--brass);margin:0 0 14px;padding-left:.4em;}
+  h1{font-family:var(--serif);font-weight:500;font-size:2rem;line-height:1.15;
+    color:var(--sea-deep);margin:0 0 6px;}
+  .sub{font-family:var(--serif);font-style:italic;color:var(--sea);font-size:1.05rem;margin:0 0 26px;}
+  .qr{width:56mm;height:56mm;margin:0 auto;display:block;}
+  .scan{font-family:var(--serif);font-size:1.15rem;color:var(--ink);margin:24px 0 4px;font-weight:500;}
+  .scan strong{color:var(--sea-deep);}
+  .desc{font-size:.86rem;color:#5a6b70;max-width:92mm;margin:6px auto 22px;line-height:1.6;}
+  .rule{width:44px;height:2px;background:var(--brass);margin:0 auto 18px;border:0;}
+  .url{font-size:.72rem;letter-spacing:.02em;color:#5a6b70;word-break:break-all;}
+  .addr{text-transform:uppercase;letter-spacing:.18em;font-size:.66rem;color:var(--sea-deep);
+    margin-top:6px;}
+
+  .hint{margin-top:20px;font-size:.8rem;color:#5a6b70;text-align:center;}
+  @media print{
+    body{background:#fff;padding:0;}
+    .card{box-shadow:none;border:none;}
+    .hint{display:none;}
+  }
+</style>
+</head>
+<body>
+  <div class="card">
+    <p class="eyebrow">Waterfront · Victoria Point</p>
+    <h1>Welcome</h1>
+    <p class="sub">Your digital guide to the home</p>
+
+    <img class="qr" src="images/qr-guide.svg" alt="QR code linking to the guest guide" />
+
+    <p class="scan">Scan for the <strong>house guide</strong></p>
+    <p class="desc">Wi-Fi, the TVs &amp; sound system, the door lock, appliances, plus
+      local ferries, cafés and things to do around the bay. Point your phone camera
+      at the code and tap the link.</p>
+
+    <hr class="rule" />
+    <p class="url">bitcoinbrisbane.github.io/9a-victoria-point-guide</p>
+    <p class="addr">9A Edinburgh Street · Victoria Point QLD</p>
+  </div>
+
+  <p class="hint">Tip: press ⌘P / Ctrl-P to print this card. Hide this note automatically when printing.</p>
+</body>
+</html>
