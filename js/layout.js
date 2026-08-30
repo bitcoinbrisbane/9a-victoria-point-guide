@@ -1,28 +1,30 @@
 /* =========================================================
    Pinned header layout — 9A Edinburgh St
    ---------------------------------------------------------
-   The hero band and nav are both position:fixed at the top,
-   with fixed heights via CSS vars. The only variable part is
-   the nav height (it can wrap to two rows on some widths), so
-   this measures it and updates --nav-h. Content padding and
-   anchor offsets are calc()'d from --hero-h + --nav-h in CSS.
+   The full-height hero and the nav are both position:fixed at
+   the top. Their heights vary with viewport width (the hero
+   title uses clamp(); the nav can wrap), so this measures both
+   and exposes them as CSS vars. Content padding and anchor
+   offsets are calc()'d from --hero-h + --nav-h in CSS.
    ========================================================= */
 
 (function () {
   "use strict";
 
+  var hero = document.querySelector(".hero");
   var nav = document.querySelector(".quicknav");
   var root = document.documentElement;
-  if (!nav) return;
+  if (!hero || !nav) return;
 
-  function measureNav() {
+  function measure() {
+    root.style.setProperty("--hero-h", hero.offsetHeight + "px");
     root.style.setProperty("--nav-h", nav.offsetHeight + "px");
   }
 
-  window.addEventListener("resize", measureNav);
-  window.addEventListener("load", measureNav);
+  window.addEventListener("resize", measure);
+  window.addEventListener("load", measure);
   if (document.fonts && document.fonts.ready) {
-    document.fonts.ready.then(measureNav);
+    document.fonts.ready.then(measure);
   }
-  measureNav();
+  measure();
 })();
